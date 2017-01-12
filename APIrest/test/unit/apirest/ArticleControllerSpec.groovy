@@ -19,11 +19,22 @@ class ArticleControllerSpec extends Specification {
     def cleanup() {
     }
 
-    void "test something"() {
+    void "test show"() {
         when:
             controller.show()
 
         then:
             Article.list().size() == 1
     }
+
+    void "test create"() {
+        when:
+            params.id = 1
+            controller.create()
+
+        then:
+            log(Article.list().last())
+
+    }
+
 }

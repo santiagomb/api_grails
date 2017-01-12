@@ -43,4 +43,17 @@ class ArticleController extends RestfulController<Article> {
         a.save()
         render a as JSON
     }
+
+    @Override
+    def author() {
+        println params
+        def author = params.id
+        def authorArticles = []
+        Article.list().each { a ->
+            if (a.autor == author){
+                authorArticles << a.title
+            }
+        }
+        render authorArticles as JSON
+    }
 }

@@ -12,7 +12,7 @@ class UrlMappings {
             action = [GET: 'show', POST: 'create']
         }
         "/articles/$controller/$id" (controller: "ArticleController"){
-            action = [DELETE: 'delete', PUT: 'update']
+            action = [DELETE: 'delete', PUT: 'update', GET: 'author']
         }
         "500"(view:'/error')
 	}
