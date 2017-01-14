@@ -6,13 +6,18 @@ class UrlMappings {
                 // apply constraints here
             }
         }
-
         "/"(view:"/index")
         "/articles/$controller" (controller: "ArticleController"){
             action = [GET: 'show', POST: 'create']
         }
         "/articles/$controller/$id" (controller: "ArticleController"){
             action = [DELETE: 'delete', PUT: 'update', GET: 'author']
+        }
+        "/usuario/$controller" (controller: "UsuarioController"){
+            action = [GET: 'show', POST: 'create']
+        }
+        "/usuario/$controller/$action" (controller: "UsuarioController"){
+            action = [GET: 'edad']
         }
         "500"(view:'/error')
 	}

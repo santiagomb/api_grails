@@ -30,6 +30,9 @@ class ArticleController extends RestfulController<Article> {
         render a as JSON
     }
 
+    // curl -i -X POST -H "Content-Type: application/json" -d '{"dni": "36155366", "nombre": "Santiago", "email":"asd@asjd.com", "nacimiento": "03/03/1990"}' localhost:8080/APIrest/usuario/create
+
+
     @Override
     def delete(){
         Article.get(params.id)?.delete()
@@ -46,11 +49,10 @@ class ArticleController extends RestfulController<Article> {
 
     @Override
     def author() {
-        println params
         def author = params.id
         def authorArticles = []
         Article.list().each { a ->
-            if (a.autor == author){
+            if (a.autor.nombre == author){
                 authorArticles << a.title
             }
         }

@@ -7,7 +7,7 @@ class Article {
 
     String title
     String contenido
-    String autor
+    Usuario autor
     Integer visitas
     String[] comentarios
 
