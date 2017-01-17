@@ -9,7 +9,7 @@ class Article {
     String contenido
     Usuario autor
     Integer visitas
-    String[] comentarios
+    ArrayList<String> comentarios
 
     static constraints = {
         title blank: false

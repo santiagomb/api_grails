@@ -16,5 +16,13 @@ class UsuarioControllerSpec extends Specification {
     }
 
     void "test something"() {
+        given:
+            def u = Mock(Usuario)
+
+        when:
+            def result = u.ObtenerEdad()
+
+        then:
+            result == "algo"
     }
 }

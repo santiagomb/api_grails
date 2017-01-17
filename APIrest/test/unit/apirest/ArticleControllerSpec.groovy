@@ -29,12 +29,10 @@ class ArticleControllerSpec extends Specification {
 
     void "test create"() {
         when:
-            params.id = 1
             controller.create()
 
         then:
-            log(Article.list().last())
-
+            println "hola"
     }
 
 }

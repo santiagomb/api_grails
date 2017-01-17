@@ -11,7 +11,7 @@ class UrlMappings {
             action = [GET: 'show', POST: 'create']
         }
         "/articles/$controller/$id" (controller: "ArticleController"){
-            action = [DELETE: 'delete', PUT: 'update', GET: 'author']
+            action = [DELETE: 'delete', PUT: 'update', GET: 'visit', GET: 'author', PUT: 'comment']
         }
         "/usuario/$controller" (controller: "UsuarioController"){
             action = [GET: 'show', POST: 'create']
